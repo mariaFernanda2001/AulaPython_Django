@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Pedir para django carregar o static, a partir dai ele tem acesso static -->
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'script/script.js' %}"></script>
+
+    <!--Invez de " <link rel="stylesheet" href="../static/css/style.css">"Esse mecanismo facilitar para indicar o templetes de lugar, em que, vai bucar o arquivo style.css
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    -->
+</head>
+
+<body>
+    <h1>VAI DAR TUDO CERTO, MARIA FERNANDA</h1>
+    <h2>SEJA SEU PRÓPRIO DJANGO KKKK </h2>
+    <!-- Toda vez que o django ver "%" ele ver que ele precisa pesquisa algo -->
+    <!-- PARA IMPRIMIR UMA VARIÁVEL abre duas chaves -->
+    <!-- <h1> abre duas chaves minhavar fechar duas chaves</h1> -->
+
+
+    <!-- Isso é um templates -->
+    <h1>Nome:</h1>
+    {% if not vazio %}
+    <ul>
+        {% for i in nomes %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Não há nomes cadastrados</p>
+    {% endif %}
+
+</body>
+
+</html>
